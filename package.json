@@ -1,0 +1,25 @@
+{
+  "name": "recommend_ani",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "fb-messenger-bot-api": "^1.1.0",
+    "express": "^4.15.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weibrin/recommend_ani.git"
+  },
+  "author": "weibrin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weibrin/recommend_ani/issues"
+  },
+  "homepage": "https://github.com/weibrin/recommend_ani#readme"
+}
