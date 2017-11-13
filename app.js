@@ -9,8 +9,12 @@ const ver_token = secret.verify_token;
 
 const client = new facebook.Client(key);
 const app = express();
+const getList = require('./function/getList');
 
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
 
 app.get('/webhook', (req, res) => {
     let VERIFY_TOKEN = ver_token;
@@ -46,8 +50,13 @@ app.post('/webhook', (req, res) => {
                     case 'Start':
                     case 'START':
                         client.sendTextMessage(sender.id, '시작합니다!')
-                            .then((result) => {
-                                //add something
+                            .then(() => {
+                                getList.list.forEach((elem, i) => {
+                                    client.sendTextMessage(sender.id, elem);
+                                });
+                            })
+                            .catch((err) => {
+                                console.log(err);
                             });
                         break;
                 }
